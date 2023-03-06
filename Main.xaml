@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>939,939</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1017,939</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="47">
@@ -123,7 +123,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="[Process Title: Capybara_Com05_Dispatcher][Version 1.0.7]&#xA;&#xA;[Process description: This process will download the required files (Master Data, Input File, List of Credit Limit Utilization and FBL5N report) and then add data from List of Credit Limit Utilization to Queue]&#xA;&#xA;[Applications Involved : SAP Logon, Edge and Outlook.]&#xA;&#xA;[Developer:  prem.baisane@orica.com] " DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="687,874" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="[Process Title: Capybara_Com05_Dispatcher][Version 1.0.8]&#xA;&#xA;[Process description: This process will download the required files (Master Data, Input File, List of Credit Limit Utilization and FBL5N report) and then add data from List of Credit Limit Utilization to Queue]&#xA;&#xA;[Applications Involved : SAP Logon, Edge and Outlook.]&#xA;&#xA;[Developer:  prem.baisane@orica.com] " DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="687,874" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -249,7 +249,7 @@
       </State.Entry>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">204.5,284</av:Point>
+          <av:Point x:Key="ShapeLocation">204.5,428.5</av:Point>
           <av:Size x:Key="ShapeSize">231,203</av:Size>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Double x:Key="StateContainerWidth">197</x:Double>
@@ -261,7 +261,7 @@
         <Transition sap2010:Annotation.AnnotationText="Business Rule Exception" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="448.8,537.6" sap2010:WorkflowViewState.IdRef="Transition_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">250.7,487 250.7,517 133.2,517 133.2,328</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">250.7,631.5 250.7,661.5 133.2,661.5 133.2,328</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">15</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">63</x:Int32>
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -270,7 +270,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <Transition.Condition>[BusinessException IsNot Nothing]</Transition.Condition>
           <Transition.To>
-            <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="624,1827" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+            <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,120" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
               <State.Entry>
                 <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="578,1682" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -302,17 +302,39 @@
                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info" Message="[&quot;Sending Success Email.&quot;]" />
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Com05_SendMail -  Success" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_44" UnSafe="False" WorkflowFileName="Workflows\Com05_SendMail.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_bln_SuccessEmail">True</InArgument>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="in_int_NoOfAttachments">0</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcessName">[Config("ProcessName").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcessOwnerEmail">[Config("ProcessOwnerEmail").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_AttachmentsList">[String.Empty]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcessOwner">[String.Empty]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_str_Message">[Config("EmailMessage_Success").ToString]</InArgument>
-                                <InArgument x:TypeArguments="s:String[]" x:Key="in_AttachmentPath">[Nothing]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_EmailTo">[Config("BusinessEmail_Support").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_EmailSubject">[Config("EmailSubject_Success").ToString]</InArgument>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dictConfig">[Config]</InArgument>
+                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_bln_SuccessEmail">
+                                  <Literal x:TypeArguments="x:Boolean" Value="True" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:Int32" x:Key="in_int_NoOfAttachments">
+                                  <Literal x:TypeArguments="x:Int32" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcessName">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;Process_Name&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcessOwnerEmail">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;ProcessOwnerEmail&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_AttachmentsList">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Empty" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcessOwner">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Empty" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_str_Message">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;EmailMessage_Success&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="s:String[]" x:Key="in_AttachmentPath">
+                                  <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="Nothing" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_EmailTo">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;BusinessEmail_Support&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_EmailSubject">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;EmailSubject_Success&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dictConfig">
+                                  <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+                                </InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                             <Delay Duration="[TimeSpan.FromSeconds(Integer.Parse(Config(&quot;SmallDelay&quot;).ToString))]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
@@ -328,17 +350,39 @@
                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_46" Level="Error" Message="[&quot;Sending Error Email.&quot;]" />
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Com05_SendMail - Error" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" UnSafe="False" WorkflowFileName="Workflows\Com05_SendMail.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_bln_SuccessEmail">False</InArgument>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="in_int_NoOfAttachments">0</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcessName">[Config("ProcessName").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcessOwnerEmail">[Config("ProcessOwnerEmail").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_AttachmentsList">[String.Empty]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcessOwner">[String.Empty]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_str_Message">[Config("EmailMessage_Error").ToString]</InArgument>
-                                <InArgument x:TypeArguments="s:String[]" x:Key="in_AttachmentPath">[Nothing]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_EmailTo">[Config("BusinessEmail_Support").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_EmailSubject">[Config("EmailSubject_Error").ToString]</InArgument>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dictConfig">[Config]</InArgument>
+                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_bln_SuccessEmail">
+                                  <Literal x:TypeArguments="x:Boolean" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:Int32" x:Key="in_int_NoOfAttachments">
+                                  <Literal x:TypeArguments="x:Int32" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcessName">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;Process_Name&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcessOwnerEmail">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;ProcessOwnerEmail&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_AttachmentsList">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Empty" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcessOwner">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Empty" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_str_Message">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;EmailMessage_Error&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="s:String[]" x:Key="in_AttachmentPath">
+                                  <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="Nothing" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_EmailTo">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;BusinessEmail_Support&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_EmailSubject">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;EmailSubject_Error&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dictConfig">
+                                  <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+                                </InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                             <Delay Duration="[TimeSpan.FromSeconds(Integer.Parse(Config(&quot;SmallDelay&quot;).ToString))]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Delay_2" />
@@ -420,7 +464,7 @@
         <Transition sap2010:Annotation.AnnotationText="There is no need for any action in case of successful transaction.&#xA;The process should simply go to next transaction." DisplayName="Success" sap:VirtualizedContainerService.HintSize="452,553.6" sap2010:WorkflowViewState.IdRef="Transition_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">308.45,487 308.45,536.04 94.5,536.04 94.5,403 90,403 90,328</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">308.45,631.5 308.45,661.5 90,661.5 90,328</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">35</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">39</x:Int32>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -435,7 +479,7 @@
         <Transition DisplayName="System Exception" sap2010:WorkflowViewState.IdRef="Transition_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">354.65,487 354.65,563.04 46.8,563.04 46.8,328</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">354.65,631.5 354.65,661.5 46.8,661.5 46.8,328</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">51</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">15</x:Int32>
             </scg:Dictionary>
@@ -942,7 +986,7 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
-              <av:PointCollection x:Key="ConnectorLocation">350,120.66666666666666 350,150.66666666666666 320,150.66666666666666 320,284</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">350,120.66666666666666 350,150.66666666666666 320,150.66666666666666 320,428.5</av:PointCollection>
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
